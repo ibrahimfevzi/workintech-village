@@ -2,6 +2,8 @@ import math as Math
 
 
 class Silo:
+
+# constructor metodu
     
     def __init__(self, radius, height, material, max_capacity, current_capacity):
         self.radius = radius
@@ -51,7 +53,7 @@ class Silo:
         return self.getArea() * self.height
     
 
-    # silonun tüm özelliklerinin ve alan ve hacim bilgisinin görüldüğü bir __str__ metodu 
+# silonun tüm özelliklerinin ve alan ve hacim bilgisinin görüldüğü bir __str__ metodu 
     
     def __str__(self):
         return f"""
@@ -66,7 +68,7 @@ class Silo:
         volume: {self.getVolume()}
         """
     
-    # siloya malzeme ekleme işlemini yapan bir addMaterial metodu
+# siloya malzeme ekleme işlemini yapan bir addMaterial metodu
 
     def addMaterial(self, material):
         if self.current_capacity + material <= self.max_capacity:
@@ -75,7 +77,7 @@ class Silo:
         else:
             return False
         
-    # silodan malzeme çıkarma işlemini yapan bir removeMaterial metodu
+# silodan malzeme çıkarma işlemini yapan bir removeMaterial metodu
 
     def removeMaterial(self, material):
 
@@ -85,12 +87,12 @@ class Silo:
         else:
             return False
         
-    # silonun doluluk oranını hesaplayan bir getFillRate metodu
+# silonun doluluk oranını hesaplayan bir getFillRate metodu
 
     def getFillRate(self):
         return self.current_capacity / self.max_capacity
     
-    # silonun doluluk oranına göre dolu mu boş mu olduğunu döndüren bir isFull metodu
+# silonun doluluk oranına göre dolu mu boş mu olduğunu döndüren bir isFull metodu
 
     def isFull(self):
         return self.getFillRate() == 1
