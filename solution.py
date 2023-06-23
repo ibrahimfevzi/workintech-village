@@ -46,12 +46,19 @@ class Silo:
 
 # diğer metotlar
 
+    # silonun taban alanının hesaplandığı bir getArea metodu
     def getArea(self):
         return (self.radius**2) * Math.pi
     
+    # silonun hacminin hesaplandığı bir getVolume metodu
     def getVolume(self):
         return self.getArea() * self.height
     
+    # silonun taban çevresinin hesaplandığı bir getBaseCircumference metodu
+    def getBaseCircumference(self):
+        return self.radius * 2 * Math.pi
+    
+
 
 # silonun tüm özelliklerinin ve alan ve hacim bilgisinin görüldüğü bir __str__ metodu 
     
@@ -66,6 +73,7 @@ class Silo:
         current_capacity: {self.current_capacity}
         area: {self.getArea()}
         volume: {self.getVolume()}
+        base_circumference: {self.getBaseCircumference()}
         """
     
 # siloya malzeme ekleme işlemini yapan bir addMaterial metodu
@@ -101,17 +109,17 @@ class Silo:
 # test kodu
 def main():
     silo = Silo(3.75, 2, "metal", 1000, 500)
+    print(silo) #__str__- silonun tüm özelliklerinin ve alan, hacim, taban çevresi bilgisinin görüldüğü metod test edildi
+    print(silo.addMaterial(100)) #addMaterial- siloya malzeme ekleme işlemini yapan metod test edildi
     print(silo)
-    print(silo.addMaterial(100))
-    print(silo)
-    print(silo.removeMaterial(100))
-    print(silo)
-    print(silo.getFillRate())
-    print(silo.isFull())
+    print(silo.removeMaterial(100)) #removeMaterial- silodan malzeme çıkarma işlemini yapan metod test edildi
+    print(silo) 
+    print(silo.getFillRate()) #getFillRate- silonun doluluk oranını bulan metod test edildi
+    print(silo.isFull()) #isFull- silonun dolu olup olmadığını bulan metod test edildi
 
-#getArea ve getVolume metotlarını test etmek için
-    print(silo.getArea())
-    print(silo.getVolume())
+    print(silo.getArea()) #getArea- silonun taban alanını bulan metod test edildi
+    print(silo.getVolume()) #getVolume- silonun hacmini bulan metod test edildi
+    print(silo.getBaseCircumference()) #getBaseCircumference- silonun taban çevresini bulan metod test edildi
 
 
     main()
